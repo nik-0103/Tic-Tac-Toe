@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.game.hide {
+  opacity: 0;
+}
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  background-color: #f1f1f1;
+}
+
+#reset-btn, #new-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff6b6b, #ff9472);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+#reset-btn:hover, #new-btn:hover {
+  background: linear-gradient(90deg, #ff9472, #ff6b6b);
+}
+
+.msg-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: none;
+}
+
+.msg-container.show {
+  display: block;
+}
+
+#msg {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
